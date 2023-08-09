@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base target="_top">
+    <style>
+        body {
+            background-color: #333333;
+            color: #FFFFFF;
+            font-family: Arial, sans-serif;
+            background-image: url('https://miro.medium.com/v2/resize:fit:1400/format:webp/1*_k3rSZlyNSVbiz1TO7jRiA.jpeg');
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 90vh;
+            padding-top: 130px; /* Adjust this value as needed */
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+        }
+
+        #buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: #666666;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #888888;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h2>Pricing Dashboard</h2>
+
+    <div id="buttons">
+        <!-- Buttons will be appended here -->
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttonLinks = {
+                1: 'https://docs.google.com/spreadsheets/d/14NXWSjulHFqdFCpT6lc0r7JJM82AGv1XkWfId-h6i1s/edit#gid=356398640',
+                2: 'https://docs.google.com/spreadsheets/d/1Z5YI5Y9VzM8q5S3PxpZ1cpxBjr29dCI8sdOTprGfLlM/edit#gid=1494507747',
+                3: 'https://docs.google.com/spreadsheets/d/1RmtO8QPXPXjq9c7ALESGN8qaPie4WU2WeC_I35xaZpc/edit#gid=1957005133',
+                4: 'https://docs.google.com/spreadsheets/d/1GVk0kdzcekVL_WU96oM8xREyYkOjXTc1kkiGIf4qanI/edit#gid=760402957',
+                5: 'https://docs.google.com/spreadsheets/d/1wdL_qZXlwGrwBq8-YGPiUN1t-lGQfGjOz-9DgoACAhI/edit#gid=0',
+                6: 'https://docs.google.com/spreadsheets/d/1rRY_1CaxoSMY7mswQPnHenCAlcpXmBy8tAXKo7L0UW8/edit#gid=580614859',
+                7: 'https://docs.google.com/spreadsheets/d/1qiwDZd_kZujEsRoPEFY-3s6wc-hA0b_zneeGTu-lrKw/edit#gid=1658849391',
+                8: 'https://docs.google.com/spreadsheets/d/1l6zT7pgNAVAXZ4ZtNNK_TROKrOTNi2uniMXphTb7W_o/edit#gid=1901427439',
+                9: 'https://docs.google.com/spreadsheets/d/1KQrjjPt6KwcBIo7oBtMCKrb8SUhZsg4nILMewzSDt4I/edit#gid=1280702910',
+                10: 'https://docs.google.com/spreadsheets/d/1yADiHUybrBf6ihBEVz4WR4YPJjBlqnzfwJsW-SjV_2Q/edit#gid=347033508'
+            };
+
+            const buttonLabels = ['SERVICE', '1AUG TURNS/RENO', 'PROJECT TRACKER', 'PLUMBING/HVAC FLAT RATE', '1JUNE JSON', 'TOOLBOX', 'IHT', 'HVAC OCCUPIED SIBI', 'FORECAST', 'MARKET DATA'];
+            const buttonContainer = document.getElementById('buttons');
+
+            for (let i = 1; i <= 10; i++) {
+                const button = document.createElement('button');
+                button.textContent = buttonLabels[i - 1];
+                button.onclick = function() {
+                    window.open(buttonLinks[i], '_blank');
+                };
+                buttonContainer.appendChild(button);
+            }
+        });
+
+    </script>
+</body>
+
+</html>
